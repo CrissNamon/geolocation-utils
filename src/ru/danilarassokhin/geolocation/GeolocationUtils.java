@@ -108,7 +108,7 @@ public class GeolocationUtils {
      */
     public static Location qthLocatorToLatLon(String qthLocator) throws GeolocationException {
         if (!isValidQthLocator(qthLocator)) {
-            throw new GeolocationException("Wrong QTH locator! Locator must contain even number of characters (2-10)");
+            throw new GeolocationException("Wrong QTH locator!");
         }
 
         String t = qthLocator.toUpperCase();
@@ -161,22 +161,22 @@ public class GeolocationUtils {
             return false;
         }
         boolean containsCondition = true;
-        for(int i=0, r = 1; i < qthLocator.length() && containsCondition; i += 2, ++r) {
-            if(r % 2 == 0) {
-                containsCondition = Character.isAlphabetic(
+        for(int i = 0, r = 1; i < qthLocator.length() && containsCondition; i += 2, ++r) {
+            if(r % 2 != 0) {
+                containsCondition = isUpperCaseLetter(
                         qthLocator.charAt(i)
-                ) && Character.isAlphabetic(
+                ) && isUpperCaseLetter(
                         qthLocator.charAt(i + 1)
                 );
             }else{
-                containsCondition = Character.isDigit(
+                containsCondition = isDigit(
                         qthLocator.charAt(i)
-                ) && Character.isDigit(
+                ) && isDigit(
                         qthLocator.charAt(i + 1)
                 );
             }
         }
-        return true;
+        return containsCondition;
     }
 
     /**
@@ -216,6 +216,22 @@ public class GeolocationUtils {
 
     private static char charFromDouble(double d) {
         return (char)(d);
+    }
+
+    private static boolean isUpperCaseLetter(char c) {
+        return c >= 'A' && c <= 'Z';
+    }
+
+    private static boolean isLowerCaseLetter(char c) {
+        return c >= 'a' && c <= 'z';
+    }
+
+    private static boolean isLetter(char c) {
+        return isUpperCaseLetter(c) || isLowerCaseLetter(c);
+    }
+
+    private static boolean isDigit(char c) {
+        return c >= '0' && c <= '9';
     }
 
 }
