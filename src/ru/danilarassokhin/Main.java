@@ -19,6 +19,8 @@ public class Main {
 
         String loc1Qth = loc1.toQthLocator(10);
         System.out.println("LOCATION 1 QTH LOCATOR: " + loc1Qth);
+        String loc1QthPrecision = loc1.toQthLocator(4);
+        System.out.println("LOCATION 1 QTH LOCATOR 4 SYMBOLS: " + loc1QthPrecision);
         System.out.println("LOCATION 1 QTH LOCATOR VALID: " + GeolocationUtils.isValidQthLocator(loc1Qth));
         Location qthToLocation = GeolocationUtils.qthLocatorToLatLon(loc1Qth);
         System.out.println("LOCATION -> QTH != QTH -> Location: " + loc1.toString() + " != " + qthToLocation.toString());
