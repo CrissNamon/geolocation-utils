@@ -4,7 +4,7 @@ import ru.danilarassokhin.geolocation.data.ListPath;
 import ru.danilarassokhin.geolocation.data.Path;
 import ru.danilarassokhin.geolocation.exception.GeolocationException;
 import ru.danilarassokhin.geolocation.data.Location;
-import ru.danilarassokhin.geolocation.converter.impl.MetersToMilesDistanceConverter;
+import ru.danilarassokhin.geolocation.converter.MetersToMilesDistanceConverter;
 import ru.danilarassokhin.geolocation.GeolocationUtils;
 
 

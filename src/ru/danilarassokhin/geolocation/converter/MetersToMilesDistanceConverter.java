@@ -1,6 +1,4 @@
-package ru.danilarassokhin.geolocation.converter.impl;
-
-import ru.danilarassokhin.geolocation.converter.DistanceConverter;
+package ru.danilarassokhin.geolocation.converter;
 
 /**
  * Represents meters to miles distance converter {@link DistanceConverter}
