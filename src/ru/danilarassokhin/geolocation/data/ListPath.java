@@ -59,7 +59,7 @@ public class ListPath implements Path {
         if(isDirty) {
             distance = 0;
             for (int i = 0; i < path.size() - 1; ++i) {
-                distance = GeolocationUtils.distanceBetween(
+                distance += GeolocationUtils.distanceBetween(
                         path.get(i),
                         path.get(i + 1)
                 );

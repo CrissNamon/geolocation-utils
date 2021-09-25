@@ -111,7 +111,6 @@ public class GeolocationUtils {
             throw new GeolocationException("Wrong QTH locator! Locator must contain even number of characters (2-10)");
         }
 
-        int o = 0;
         String t = qthLocator.toUpperCase();
         double[] e = new double[10];
 
@@ -128,7 +127,7 @@ public class GeolocationUtils {
             t += "LL";
         }
 
-        for (; o < qthLocator.length(); ++o) {
+        for (int o = 0; o < qthLocator.length(); ++o) {
             e[o] = t.charAt(o) - 65;
         }
 
