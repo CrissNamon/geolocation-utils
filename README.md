@@ -1,4 +1,4 @@
-#GeolocationUtils
+# GeolocationUtils
 Small library to perform operations with geolocation data:
 + Converts latitude, longitude to [QTH locator](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) and back
     + Supports precision specification. Converts location to 2-10 symbols QTH locators
