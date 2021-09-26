@@ -127,7 +127,7 @@ public class GeolocationUtils {
             t += "LL";
         }
 
-        for (int o = 0; o < qthLocator.length(); ++o) {
+        for (int o = 0; o < 10; ++o) {
             e[o] = t.charAt(o) - 65;
         }
 
