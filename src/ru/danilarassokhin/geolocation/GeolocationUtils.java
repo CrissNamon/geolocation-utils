@@ -156,13 +156,13 @@ public class GeolocationUtils {
         if(qthLocator == null) {
             return false;
         }
-        boolean lengthCondition = qthLocator.length() > 1 && qthLocator.length() < 11 && qthLocator.length() % 2 == 0;
-        if (!lengthCondition) {
+        if (qthLocator.length() < 2 || qthLocator.length() > 10 || qthLocator.length() % 2 == 0) {
             return false;
         }
         boolean containsCondition = true;
-        for(int i = 0, r = 1; i < qthLocator.length() && containsCondition; i += 2, ++r) {
-            if(r % 2 != 0) {
+        boolean isLetters = true;
+        for(int i = 0; i < qthLocator.length() && containsCondition; i += 2, isLetters = !isLetters) {
+            if(isLetters) {
                 containsCondition = isUpperCaseLetter(
                         qthLocator.charAt(i)
                 ) && isUpperCaseLetter(
